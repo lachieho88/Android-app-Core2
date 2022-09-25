@@ -6,13 +6,150 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/UniversityImage"
+        android:layout_width="194dp"
+        android:layout_height="235dp"
+        app:layout_constraintBottom_toTopOf="@+id/HallImage"
+        app:layout_constraintEnd_toStartOf="@+id/StationIamge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.351"
+        app:srcCompat="@drawable/university"
+        android:contentDescription="TODO" />
+
     <TextView
+        android:id="@+id/Univesity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Univesity"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/HallImage"
+        app:layout_constraintEnd_toStartOf="@+id/Station"
+        app:layout_constraintHorizontal_bias="0.319"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UniversityImage"
+        app:layout_constraintVertical_bias="0.43" />
+
+    <TextView
+        android:id="@+id/University_Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="8dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="@string/university_rating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Univesity" />
+
+    <ImageView
+        android:id="@+id/StationIamge"
+        android:layout_width="198dp"
+        android:layout_height="237dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/UniversityImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/station" />
+
+    <TextView
+        android:id="@+id/Station"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:text="Station"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/GardenImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StationIamge"
+        app:layout_constraintVertical_bias="0.393" />
+
+    <TextView
+        android:id="@+id/Station_Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="100dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="@string/station_rating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Station" />
+
+    <ImageView
+        android:id="@+id/HallImage"
+        android:layout_width="201dp"
+        android:layout_height="148dp"
+        android:layout_marginTop="105dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/GardenImage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673"
+        app:srcCompat="@drawable/hall" />
+
+    <TextView
+        android:id="@+id/Hall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hall"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Garden"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HallImage"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <TextView
+        android:id="@+id/Hall_Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:text="@string/hall_rating"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Hall"
+        app:layout_constraintVertical_bias="0.095" />
+
+    <ImageView
+        android:id="@+id/GardenImage"
+        android:layout_width="207dp"
+        android:layout_height="138dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/HallImage"
+        app:layout_constraintTop_toBottomOf="@+id/StationIamge"
+        app:layout_constraintVertical_bias="0.431"
+        app:srcCompat="@drawable/garden" />
+
+    <TextView
+        android:id="@+id/Garden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:text="Garden"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GardenImage"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/GardenRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="108dp"
+        android:text="@string/garden_rating"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Garden"
+        app:layout_constraintVertical_bias="0.095" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

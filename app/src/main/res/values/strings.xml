@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Core2</string>
+    <string name="university_rating">university_rating</string>
+    <string name="station_rating">station_rating</string>
+    <string name="hall_rating">hall_rating</string>
+    <string name="garden_rating">garden_rating</string>
+
+
 </resources>
