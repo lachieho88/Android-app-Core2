@@ -35,7 +35,6 @@ class DetailActivity : AppCompatActivity() {
                 }
                 3 -> {
                     vImage.setImageResource(resources.getIdentifier("hall","drawable", packageName))
-
                 }
                 else -> {
                     vImage.setImageResource(resources.getIdentifier("garden","drawable", packageName))

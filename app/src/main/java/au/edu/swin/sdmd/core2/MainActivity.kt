@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,45 +34,33 @@ class MainActivity : AppCompatActivity() {
         // The data needs to be passed as a Parcelable object
         val vUniversity = findViewById<ImageView>(R.id.UniversityImage)
         vUniversity.setOnClickListener {
-            //set up intent
-            val intent = Intent(this, DetailActivity::class.java)
-            //put extra data into our intent, done it with a Parcelable object
-            intent.putExtra("place", university)
-            //start the activity based on those details
-             startActivity(intent)
-          //  startForResult.launch(intent)
+            startIntent(university)
         }
 
         val vStation = findViewById<ImageView>(R.id.StationIamge)
         vStation.setOnClickListener {
-            //set up intent
-            val intent = Intent(this, DetailActivity::class.java)
-            //put extra data into our intent, done it with a Parcelable object
-            intent.putExtra("place", station)
-            //start the activity based on those details
-              startActivity(intent)
-          //  startForResult.launch(intent)
+            startIntent(station)
 
         }
         val vHall = findViewById<ImageView>(R.id.HallImage)
         vHall.setOnClickListener {
-            val intent = Intent(this, DetailActivity::class.java)
-            //put extra data into our intent, done it with a Parcelable object
-            intent.putExtra("place", hall)
-            //start the activity based on those details
-             startActivity(intent)
-           // startForResult.launch(intent)
+            startIntent(hall)
         }
 
         val vGarden = findViewById<ImageView>(R.id.GardenImage)
         vGarden.setOnClickListener {
-            val intent = Intent(this, DetailActivity::class.java)
-            //put extra data into our intent, done it with a Parcelable object
-            intent.putExtra("place", garden)
-            //start the activity based on those details
-             startActivity(intent)
-           // startForResult.launch(intent)
+            startIntent(garden)
 
         }
     }
+    fun startIntent(place: Place) {
+        val intent = Intent(this, DetailActivity::class.java)
+        //put extra data into our intent, done it with a Parcelable object
+        intent.putExtra("place", place)
+        //start the activity based on those details
+        startActivity(intent)
+        // startForResult.launch(intent)
+
+    }
+
 }

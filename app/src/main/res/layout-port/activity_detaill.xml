@@ -24,7 +24,9 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="TextView"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        style="@style/RedText"
+        />
 
     <TextView
         android:id="@+id/location"
@@ -33,7 +35,9 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="TextView"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        style="@style/ItalicText"
+        />
 
     <RatingBar
         android:id="@+id/ratingBar"

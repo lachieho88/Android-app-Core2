@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RedText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#ff0000</item>
+    </style>
+
+    <style name="ItalicText">
+        <item name="android:textStyle">italic</item>
+    </style>
+</resources>
