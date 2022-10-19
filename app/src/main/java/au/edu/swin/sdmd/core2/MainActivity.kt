@@ -1,12 +1,11 @@
 package au.edu.swin.sdmd.core2
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : AppCompatActivity() {
     //create Parcelable objects
@@ -15,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     val hall = Place(3, "hall", "london", "15/05/2018", 4.0.toFloat())
     val garden = Place(4, "garden", "Melbourne city", "28/10/2023", 5.0.toFloat())
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+
     fun startIntent(place: Place) {
         val intent = Intent(this, DetailActivity::class.java)
         //put extra data into our intent, done it with a Parcelable object
@@ -53,8 +55,8 @@ class MainActivity : AppCompatActivity() {
     fun initialiseVariables()
     {
         val vUniversityRating = findViewById<TextView>(R.id.University_Rating)
-        val vStationRating = findViewById<TextView>(R.id.Station_Rating)
-        val vHallRating = findViewById<TextView>(R.id.Hall_Rating)
+        val vStationRating = findViewById<TextView>(R.id.stationRating)
+        val vHallRating = findViewById<TextView>(R.id.HallRating)
         val vGardenRating = findViewById<TextView>(R.id.GardenRating)
 
         vUniversityRating.text = university.rating.toString()

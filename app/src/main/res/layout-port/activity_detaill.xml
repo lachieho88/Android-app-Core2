@@ -8,12 +8,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="400dp"
-        android:layout_height="589dp"
+        android:layout_width="434dp"
+        android:layout_height="606dp"
         android:layout_gravity="center"
         android:layout_weight="1"
         android:contentDescription="university"
-
         android:foregroundGravity="center"
         app:srcCompat="@drawable/university" />
 
