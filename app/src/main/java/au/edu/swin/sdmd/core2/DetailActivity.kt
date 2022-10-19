@@ -11,6 +11,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.lifecycle.ViewModel
 
 class DetailActivity : AppCompatActivity() {
+    var place: Place? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detaill)
@@ -18,7 +19,7 @@ class DetailActivity : AppCompatActivity() {
 
 
         //get data
-        val place = intent.getParcelableExtra<Place>("place")
+         place = intent.getParcelableExtra<Place>("place")
 
         //Null check and set the data to be shown on screen
         place?.let {
@@ -56,5 +57,17 @@ class DetailActivity : AppCompatActivity() {
         }
 
     }
+    override fun onBackPressed() {
+        //code to make sure that the ratings bar is pressed
+        //To save the result on this side we need to pass in an object
+         place?.rating = findViewById<RatingBar>(R.id.ratingBar).rating
+        val i = intent.apply {
+            putExtra("rating",place)
+        }
+        setResult(Activity.RESULT_OK, i)
+        super.onBackPressed()
+
+    }
+
 
 }
