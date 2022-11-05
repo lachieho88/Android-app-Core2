@@ -1,58 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="434dp"
-        android:layout_height="606dp"
+        android:layout_height="530dp"
         android:layout_gravity="center"
         android:layout_weight="1"
         android:contentDescription="university"
         android:foregroundGravity="center"
         app:srcCompat="@drawable/university" />
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="TextView"
-        android:textSize="20sp"
-        style="@style/RedText"
-        />
 
-    <TextView
-        android:id="@+id/location"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tillName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="TextView"
-        android:textSize="16sp"
-        style="@style/ItalicText"
-        />
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tillLocation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:gravity="center" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="47dp"
         android:layout_gravity="center"
         android:layout_weight="1"
         android:foregroundGravity="center"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <TextView
-        android:id="@+id/date"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tillDate"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="TextView" />
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:inputType="datetime" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>

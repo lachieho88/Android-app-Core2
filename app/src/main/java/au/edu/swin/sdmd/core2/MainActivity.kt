@@ -4,9 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : AppCompatActivity() {
@@ -50,43 +50,61 @@ class MainActivity : AppCompatActivity() {
     }
     val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult())
     {
-        // Log.i("RESULT","returned ${it.data.toString()}")
-
             result ->
         when (result.resultCode) {
             RESULT_OK -> {
                 val data = result.data
                 //then update your rating text view with the new value
-              //  val ratings = data?.getFloatExtra("rating", (-1.0).toFloat())
-                val ratings = data?.getParcelableExtra<Place>("rating")
+                val place = data?.getParcelableExtra<Place>("place")
+                val vUniversityText = findViewById<TextView>(R.id.UniversityText)
+                val vStationText = findViewById<TextView>(R.id.StationText)
+                val vHallText = findViewById<TextView>(R.id.HallText)
+                val vGardenText = findViewById<TextView>(R.id.GardenText)
                 val vUniversityRating = findViewById<TextView>(R.id.University_Rating)
                 val vStationRating = findViewById<TextView>(R.id.stationRating)
                 val vHallRating = findViewById<TextView>(R.id.HallRating)
                 val vGardenRating = findViewById<TextView>(R.id.GardenRating)
-                ratings?.let {
+                place?.let {
                     when(it.imageId){
+                        //When an item is updated,
+                        //a Toast or Snackbar is required to denote this,
+                        //and must contain details relating to the item.
                         1->{
-                            university = ratings
+                            university = place
                             vUniversityRating.text = university.rating.toString()
+                            vUniversityText.text = university.name
+                            val toast = Toast.makeText(applicationContext, "${vUniversityText.text} updated", Toast.LENGTH_SHORT)
+                            toast.show()
                         }
                         2->{
-                            station = ratings
+                            station = place
                             vStationRating.text = station.rating.toString()
+                            vStationText.text = station.name
+                            val toast = Toast.makeText(applicationContext, "${vStationText.text} updated", Toast.LENGTH_SHORT)
+                            toast.show()
+
                         }
                         3->
                         {
-                            hall = ratings
+                            hall = place
+                            vHallText.text = hall.name
                             vHallRating.text = hall.rating.toString()
+                            val toast = Toast.makeText(applicationContext, "${vHallText.text} updated", Toast.LENGTH_SHORT)
+                            toast.show()
+
                         }
                         else ->
                         {
-                            garden = ratings
+                            garden = place
+                            vGardenText.text = garden.name
                             vGardenRating.text = garden.rating.toString()
+                            val toast = Toast.makeText(applicationContext, "${vGardenText.text} updated", Toast.LENGTH_LONG)
+                            toast.show()
+
                         }
                     }
                 }
             }
-
         }
     }
 

@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Core2</string>
+    <string name="University">University</string>
+    <string name="Station">Station</string>
+    <string name="Hall">Hall</string>
+    <string name="Garden">Garden</string>
     <string name="university_rating">university_rating</string>
     <string name="station_rating">station_rating</string>
     <string name="hall_rating">hall_rating</string>
